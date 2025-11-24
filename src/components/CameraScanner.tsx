@@ -97,11 +97,17 @@ const CameraScanner = ({ onBack, onScanSuccess }: CameraScannerProps) => {
       }
 
       if (err) {
-        if (
-          err.name?.startsWith("NotFoundException") ||
-          err.name?.startsWith("ChecksumException") ||
-          err.name?.startsWith("FormatException")
-        ) {
+        const msg = err.message?.toLowerCase() || "";
+        const isNormalError =
+          err.name?.toLowerCase().includes("notfound") ||
+          err.name?.toLowerCase().includes("checksum") ||
+          err.name?.toLowerCase().includes("format") ||
+          msg.includes("no multiformat readers") ||
+          msg.includes("checksum") ||
+          msg.includes("not found") ||
+          msg.includes("format exception");
+
+        if (isNormalError) {
           return;
         }
         setError("Ocurrió un problema con el escáner: " + err.message);

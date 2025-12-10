@@ -7,6 +7,7 @@ import { Layout } from "@/components/Layout";
 import Index from "./pages/Index";
 import AttendancePage from "./pages/AttendancePage";
 import EnrollmentPage from "./pages/EnrollmentPage";
+import EnrollmentListPage from "./pages/EnrollmentListPage";
 import CameraPage from "./pages/CameraPage";
 import LaserPage from "./pages/LaserPage";
 import AttendanceListPage from "./pages/AttendanceListPage";
@@ -28,10 +29,10 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/attendance" element={<AttendancePage />} />
             <Route path="/enrollment" element={<EnrollmentPage />} />
+            <Route path="/enrollment-list" element={<EnrollmentListPage />} />
             <Route path="/camera" element={<CameraPage />} />
             <Route path="/laser" element={<LaserPage />} />
             <Route path="/attendance-list" element={<AttendanceListPage />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>

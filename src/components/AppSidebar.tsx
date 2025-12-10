@@ -1,4 +1,4 @@
-import { Home, UserPlus, ClipboardList } from "lucide-react";
+import { Home, UserPlus, ClipboardList, List } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import {
   Sidebar,
@@ -14,7 +14,16 @@ import {
 const menuItems = [
   { title: "Inicio", url: "/", icon: Home },
   { title: "Control de Asistencia", url: "/attendance", icon: ClipboardList },
-  { title: "Registro de Matrícula", url: "/enrollment", icon: UserPlus },
+  {
+    title: "Registro Matrícula de Talleres",
+    url: "/enrollment",
+    icon: UserPlus,
+  },
+  {
+    title: "Bandeja Matrícula de Talleres",
+    url: "/enrollment-list",
+    icon: List,
+  },
 ];
 
 export function AppSidebar() {
